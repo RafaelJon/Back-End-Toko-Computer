@@ -1,0 +1,24 @@
+type Computer {
+    id: ID!
+    ram: Int!
+    battery: Float!
+    proccessor: String!
+    gpu: String!
+}
+
+type Query {
+    computers: [Computer!]!
+}
+
+input newComputer{
+    ram: Int!
+    battery: Float!
+    proccessor: String!
+    gpu: String!
+}
+
+type Mutation {
+    createComputer (input: newComputer): Computer!
+    updateComputer (id: ID!, input: newComputer): Computer!
+    deleteComputer (id: ID!): Boolean!
+}
